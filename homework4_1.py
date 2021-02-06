@@ -4,20 +4,12 @@ def test_if_prime(number):
 #func: test if 'number' is prime by definition. it can be further optimized by many methods, 
 #most cerainly by the Fermat primality test
 #param: (int)'number' the number to evaluate
-#return: (bool) True if prime, False if not prime
-
-    divisibility = 0
-    
-    for k in range(2,  number+1):
+#return: (bool) True if prime, False if not prime    
+    for k in range(2,  number):
         if number % k == 0:
-            divisibility += 1
-            #print("%d divisible by %d" %(number, k))
-    if divisibility == 1:
-        #print("Success! %d is only divisible by 1 and itself!" %(number))
-        return True
-    else: 
-        #print("Fail! %d is not prime as it is divisible by another %d numbers besides 1 and itself" %(number, divisibility - 1))
-        return False   
+            return False
+        
+    return True   #if from 2 to number - 1 there were no divisibility then is prime
 
 def create_prime_list(size):
 #func: fill a list with prime numbers
@@ -30,7 +22,7 @@ def create_prime_list(size):
     start = time.time()
     
     aux_list = []
-    for i in range(0, size):
+    for i in range(2, size): 
         if test_if_prime(i) == True:
             aux_list.append(i)
     end = time.time()
