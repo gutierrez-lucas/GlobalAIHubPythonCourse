@@ -36,3 +36,7 @@ for i in range(0, half):
     list_random[half + i] = aux_value
 
 print(list_random)
+
+b = "lala"
+a = [len(b)/2]
+print(a)
