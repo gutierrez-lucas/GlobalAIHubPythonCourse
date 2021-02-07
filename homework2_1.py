@@ -1,6 +1,6 @@
 """
 SECOND HOMEWORK
-
+ 
 1) Create a list and swap the second half of the list with the first half of the list and print the list on screen
 
 """
